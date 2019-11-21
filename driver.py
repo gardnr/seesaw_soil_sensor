@@ -18,9 +18,9 @@ class SeesawSoilSensor(drivers.Sensor):
 
     def read(self):
         # read moisture level through capacitive touch pad
-        moisture = ss.moisture_read()
+        moisture = self.ss.moisture_read()
         metrics.create_metric_log(self.moisture_metric, moisture)
 
         # read temperature from the temperature sensor
-        t9e = ss.get_temp()
+        t9e = self.ss.get_temp()
         metrics.create_metric_log(self.t9e_metric, t9e)
