@@ -1,0 +1,1 @@
+adafruit-circuitpython-seesaw==1.5.4
