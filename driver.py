@@ -1,20 +1,19 @@
-import time
-
 import busio
-from board import SCL, SDA
 from adafruit_seesaw.seesaw import Seesaw
+from board import SCL, SDA
 
 from gardnr import drivers, metrics
 
 
 class SeesawSoilSensor(drivers.Sensor):
 
+    i2c_address = 56  # 0x36
     moisture_metric = 'soil-moisture'
     t9e_metric = 'soil-temp'
 
     def setup(self):
         i2c_bus = busio.I2C(SCL, SDA)
-        self.ss = Seesaw(i2c_bus, addr=0x36)
+        self.ss = Seesaw(i2c_bus, addr=ic2_address)
 
     def read(self):
         # read moisture level through capacitive touch pad
