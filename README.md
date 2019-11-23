@@ -8,6 +8,8 @@ On Raspi, make sure to [enable I2C](https://learn.adafruit.com/adafruits-raspber
 
 To read from multiple sensors, you must change the address for each sensor. See the directions at the bottom of [this guide](https://learn.adafruit.com/adafruit-stemma-soil-sensor-i2c-capacitive-moisture-sensor/pinouts)
 
+To verify the addresses of the sensors, run `i2cdetect`. For example, if your I2C bus is `/dev/i2c-1`, you would run `i2cdetect -y 1`.
+
 ```
 python3 -m pip install -r seesaw_soil_sensor/requirements.txt
 
