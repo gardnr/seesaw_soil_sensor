@@ -13,7 +13,7 @@ class SeesawSoilSensor(drivers.Sensor):
 
     def setup(self):
         i2c_bus = busio.I2C(SCL, SDA)
-        self.ss = Seesaw(i2c_bus, addr=ic2_address)
+        self.ss = Seesaw(i2c_bus, addr=self.ic2_address)
 
     def read(self):
         # read moisture level through capacitive touch pad
